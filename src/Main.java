@@ -26,9 +26,13 @@ public class Main {
             for (int j = i - 1; j >= 0; j--) {
 
                 if (a[j] > a[index]) {
+
+                    // Swap elements whem the below condition satisfies
                     temp = a[index];
                     a[index] = a[j];
                     a[j] = temp;
+
+                    //Decrement the index once the elements have been swapped
                     index--;
                 }
 

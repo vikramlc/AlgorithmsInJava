@@ -5,38 +5,27 @@ public class Main {
                 5, 2, 4, 6, 1, 3
         };
 
-        sort(a);
+        int[] b = {
+                7, 10, 8, 9, 1, 4
+        };
 
-        for (int index : a) {
-            System.out.print(index + " ");
-        }
+        addBinary(a, b);
+
     }
 
 
-    public static void sort(int[] a) {
+    public static void addBinary(int[] a, int[] b) {
 
-        int temp = 0;
-        int index = 0;
+        Integer[] c = new Integer[a.length];
 
-        for (int i = 1; i < a.length; i++) {
-
-            int key = a[i];
-            index = i;
-
-            for (int j = i - 1; j >= 0; j--) {
-
-                if (a[j] > a[index]) {
-
-                    // Swap elements whem the below condition satisfies
-                    temp = a[index];
-                    a[index] = a[j];
-                    a[j] = temp;
-
-                    //Decrement the index once the elements have been swapped
-                    index--;
-                }
-
-            }
+        for(int i=0; i<a.length; i++) {
+            c[i] = Integer.valueOf(a[i]+b[i]);
         }
+
+        for(Integer value: c) {
+            System.out.print(Integer.toBinaryString(value) + " ");
+        }
+
     }
 }
+
